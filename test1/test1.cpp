@@ -63,6 +63,13 @@ int main()
         for (DWORD i = 0; i < bytesRead && i < size.QuadPart; i++) {
             printf("%02X ", fileBuffer[i]);
         }
+        std::wcout << L"\n reading the file with contents :\n";
+        for (DWORD i = 0; i < bytesRead; i++) {
+            printf("Byte %lu: %02X  '%c'\n",
+                i,
+                fileBuffer[i],
+                fileBuffer[i]);
+        }
 
         printf("\n");
     }
@@ -77,3 +84,4 @@ int main()
 
     return 0;
 }
+
